@@ -130,6 +130,7 @@ All colors MUST be HSL.
   .horizontal-scroll {
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
@@ -142,11 +143,13 @@ All colors MUST be HSL.
 
   /* Scroll snap section */
   .scroll-section {
-    flex: none;
-    width: 100vw;
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
     height: 100vh;
     scroll-snap-align: start;
     scroll-snap-stop: always;
+    overflow-y: auto;
   }
 }
 

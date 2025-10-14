@@ -10,18 +10,13 @@ import Contact from "@/components/Contact";
 
 const IndexNew = () => {
   return (
-    <SidebarProvider>
-      <div className="min-h-screen flex w-full">
+    <SidebarProvider defaultOpen={true}>
+      <div className="min-h-screen flex w-full overflow-hidden">
         <AppSidebar />
         
-        <main className="flex-1 relative">
-          {/* Floating sidebar trigger */}
-          <div className="fixed top-4 left-4 z-50">
-            <SidebarTrigger />
-          </div>
-          
+        <main className="flex-1 relative overflow-hidden">
           {/* Horizontal scroll container */}
-          <div className="horizontal-scroll h-screen">
+          <div className="horizontal-scroll h-screen w-full">
             <HeroNew />
             <AboutNew />
             <SkillsNew />
