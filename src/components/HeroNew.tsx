@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Mail, Terminal, ChevronRight } from "lucide-react"
-import profilePhoto from "@/assets/profile-photo.jpg"
+import { Github, Linkedin, Mail, Terminal, ChevronRight, Code, Database, Laptop, Boxes, Braces } from "lucide-react"
 
 const HeroNew = () => {
   return (
@@ -109,32 +108,57 @@ const HeroNew = () => {
           </div>
         </div>
 
-        {/* Right: Photo - Clean and Elegant */}
-        <div className="relative flex items-center justify-center animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-          <div className="relative group">
-            {/* Subtle glow effect */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-primary/30 to-primary/20 blur-2xl opacity-40 group-hover:opacity-60 transition-opacity" />
-            
-            {/* Main photo container */}
-            <div className="relative w-80 h-80 overflow-hidden rounded-2xl shadow-2xl border-4 border-primary/20 group-hover:border-primary/40 transition-all duration-500">
-              <img 
-                src={profilePhoto} 
-                alt="Mayuri Kulkarni - Full Stack Developer" 
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-              />
-              
-              {/* Subtle gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
+        {/* Right: Animated Visual Effect */}
+        <div className="relative flex items-center justify-center animate-fade-in-up h-96" style={{animationDelay: '0.2s'}}>
+          {/* Central glowing orb */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-64 h-64 bg-gradient-to-r from-primary/30 via-primary/50 to-emerald-light/30 rounded-full blur-3xl animate-pulse" />
+          </div>
+          
+          {/* Floating tech icons with animations */}
+          <div className="relative w-96 h-96 flex items-center justify-center">
+            {/* Center large icon */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-32 h-32 rounded-2xl bg-primary/10 backdrop-blur-sm border-2 border-primary/30 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl">
+                <Code className="w-16 h-16 text-primary" />
+              </div>
             </div>
             
-            {/* Floating status badge */}
-            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-8 py-3 rounded-full shadow-xl font-semibold text-sm border-4 border-background backdrop-blur-sm flex items-center gap-2 group-hover:scale-105 transition-transform">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-foreground opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-primary-foreground"></span>
-              </span>
-              Available for Hire
+            {/* Orbiting icons */}
+            <div className="absolute inset-0 animate-spin-slow" style={{animationDuration: '20s'}}>
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-xl bg-primary/20 backdrop-blur-sm border border-primary/40 flex items-center justify-center shadow-lg">
+                <Database className="w-8 h-8 text-primary" />
+              </div>
             </div>
+            
+            <div className="absolute inset-0 animate-spin-slow" style={{animationDuration: '25s', animationDirection: 'reverse'}}>
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-xl bg-primary/20 backdrop-blur-sm border border-primary/40 flex items-center justify-center shadow-lg">
+                <Laptop className="w-8 h-8 text-primary" />
+              </div>
+            </div>
+            
+            <div className="absolute inset-0 animate-spin-slow" style={{animationDuration: '30s'}}>
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-16 rounded-xl bg-primary/20 backdrop-blur-sm border border-primary/40 flex items-center justify-center shadow-lg">
+                <Boxes className="w-8 h-8 text-primary" />
+              </div>
+            </div>
+            
+            <div className="absolute inset-0 animate-spin-slow" style={{animationDuration: '35s', animationDirection: 'reverse'}}>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-16 h-16 rounded-xl bg-primary/20 backdrop-blur-sm border border-primary/40 flex items-center justify-center shadow-lg">
+                <Braces className="w-8 h-8 text-primary" />
+              </div>
+            </div>
+            
+            {/* Decorative rings */}
+            <div className="absolute inset-8 border-2 border-primary/20 rounded-full animate-pulse" />
+            <div className="absolute inset-16 border border-primary/10 rounded-full" style={{animationDelay: '1s'}} />
+          </div>
+          
+          {/* Floating particles */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-float" />
+            <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-primary/60 rounded-full animate-float" style={{animationDelay: '1s'}} />
+            <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-primary/80 rounded-full animate-float" style={{animationDelay: '2s'}} />
           </div>
         </div>
       </div>
