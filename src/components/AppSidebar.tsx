@@ -7,7 +7,6 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  useSidebar,
 } from "@/components/ui/sidebar"
 import { ThemeToggle } from "./ThemeToggle"
 
@@ -22,9 +21,6 @@ const items = [
 ]
 
 export function AppSidebar() {
-  const { state } = useSidebar()
-  const isCollapsed = state === "collapsed"
-
   const scrollToSection = (sectionIndex: number) => {
     const container = document.querySelector('.horizontal-scroll')
     if (container) {
@@ -36,10 +32,9 @@ export function AppSidebar() {
   }
 
   return (
-    <Sidebar className={isCollapsed ? "w-16" : "w-64"}>
+    <Sidebar className="w-16" collapsible="none">
       <SidebarContent>
-        <div className="p-4 flex items-center justify-between border-b border-border">
-          {!isCollapsed && <span className="font-bold text-lg gradient-text">MK</span>}
+        <div className="p-3 flex items-center justify-center border-b border-border">
           <ThemeToggle />
         </div>
         
@@ -50,10 +45,10 @@ export function AppSidebar() {
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton
                     onClick={() => scrollToSection(item.section)}
-                    className="hover:bg-primary/10 transition-colors"
+                    className="hover:bg-primary/10 transition-colors justify-center"
+                    tooltip={item.title}
                   >
                     <item.icon className="h-5 w-5" />
-                    {!isCollapsed && <span>{item.title}</span>}
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

@@ -58,11 +58,26 @@ const HeroNew = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4">
-            <Button size="lg" className="group shadow-lg hover:shadow-xl transition-all">
+            <Button 
+              size="lg" 
+              className="group shadow-lg hover:shadow-xl transition-all"
+              onClick={() => {
+                const container = document.querySelector('.horizontal-scroll');
+                if (container) container.scrollTo({ left: 3 * window.innerWidth, behavior: 'smooth' });
+              }}
+            >
               View Projects
               <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline" className="border-2">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-2"
+              onClick={() => {
+                const container = document.querySelector('.horizontal-scroll');
+                if (container) container.scrollTo({ left: 6 * window.innerWidth, behavior: 'smooth' });
+              }}
+            >
               Get In Touch
             </Button>
           </div>
@@ -96,24 +111,52 @@ const HeroNew = () => {
 
         {/* Right: Photo with unique design */}
         <div className="relative flex items-center justify-center animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-          {/* Decorative elements */}
+          {/* Animated geometric shapes */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-80 h-80 border-2 border-primary/20 rounded-full animate-pulse" />
-            <div className="absolute w-96 h-96 border border-primary/10 rounded-full" style={{animationDelay: '0.5s'}} />
+            <div className="absolute w-80 h-80 border-2 border-primary/30 rotate-45 animate-spin-slow" style={{animationDuration: '20s'}} />
+            <div className="absolute w-72 h-72 border-2 border-primary/20 -rotate-12 animate-spin-slow" style={{animationDuration: '15s', animationDirection: 'reverse'}} />
+            <div className="absolute w-96 h-96 border border-primary/10 rotate-12 animate-pulse" />
           </div>
           
-          {/* Photo container with unique shape */}
+          {/* Photo container with hexagon-like shape using clip-path */}
           <div className="relative z-10 group">
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-full blur-2xl opacity-20 group-hover:opacity-30 transition-opacity" />
-            <div className="relative w-72 h-72 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
-              <img 
-                src={profilePhoto} 
-                alt="Mayuri Kulkarni" 
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-              />
+            {/* Glowing background effect */}
+            <div className="absolute -inset-8 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 blur-3xl opacity-50 group-hover:opacity-70 transition-opacity animate-pulse" />
+            
+            {/* Main photo container with custom clip-path */}
+            <div className="relative w-80 h-80 overflow-hidden shadow-2xl group-hover:shadow-primary/50 transition-all duration-500">
+              {/* Unique shape using clip-path (octagon-like) */}
+              <div 
+                className="w-full h-full bg-gradient-to-br from-primary/10 to-secondary/10 p-1"
+                style={{
+                  clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)'
+                }}
+              >
+                <div 
+                  className="w-full h-full overflow-hidden bg-background"
+                  style={{
+                    clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)'
+                  }}
+                >
+                  <img 
+                    src={profilePhoto} 
+                    alt="Mayuri Kulkarni - Full Stack Developer" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+              </div>
+              
+              {/* Decorative corner accents */}
+              <div className="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-primary/60" />
+              <div className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-primary/60" />
             </div>
-            {/* Floating badge */}
-            <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground px-6 py-3 rounded-full shadow-lg font-semibold text-sm border-4 border-background">
+            
+            {/* Floating status badge */}
+            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-8 py-3 rounded-full shadow-xl font-semibold text-sm border-4 border-background backdrop-blur-sm flex items-center gap-2 group-hover:scale-105 transition-transform">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-foreground opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-primary-foreground"></span>
+              </span>
               Available for Hire
             </div>
           </div>
