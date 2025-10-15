@@ -1,6 +1,21 @@
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Code2, Database, Wrench, Users } from "lucide-react";
+import { 
+  SiReact, 
+  SiTailwindcss, 
+  SiHtml5, 
+  SiCss3, 
+  SiBootstrap, 
+  SiTypescript,
+  SiPython,
+  SiDjango,
+  SiPostgresql,
+  SiMysql,
+  SiGit,
+  SiGithub,
+  SiPostman
+} from "react-icons/si";
+import { Network, Brain, Zap, Lightbulb, Code } from "lucide-react";
 
 const SkillsNew = () => {
   const skillCategories = [
@@ -8,29 +23,45 @@ const SkillsNew = () => {
       title: "Frontend",
       icon: Code2,
       color: "text-primary",
-      skills: ["React.js", "TailwindCSS", "HTML5", "CSS3", "Bootstrap", "TypeScript"],
+      skills: [
+        { name: "React.js", icon: SiReact },
+        { name: "TailwindCSS", icon: SiTailwindcss },
+        { name: "HTML5", icon: SiHtml5 },
+        { name: "CSS3", icon: SiCss3 },
+        { name: "Bootstrap", icon: SiBootstrap },
+        { name: "TypeScript", icon: SiTypescript },
+      ],
     },
     {
       title: "Backend",
       icon: Database,
       color: "text-primary",
-      skills: ["Python", "Django", "Django REST", "REST APIs", "PostgreSQL", "MySQL"],
+      skills: [
+        { name: "Python", icon: SiPython },
+        { name: "Django", icon: SiDjango },
+        { name: "PostgreSQL", icon: SiPostgresql },
+        { name: "MySQL", icon: SiMysql },
+      ],
     },
     {
       title: "Tools & DevOps",
       icon: Wrench,
       color: "text-primary",
-      skills: ["Git", "GitHub", "Postman", "VSCode", "Render", "JWT"],
-    },
-    {
-      title: "Soft Skills",
-      icon: Users,
-      color: "text-primary",
-      skills: ["Leadership", "Public Speaking", "Team Collaboration", "Communication"],
+      skills: [
+        { name: "Git", icon: SiGit },
+        { name: "GitHub", icon: SiGithub },
+        { name: "Postman", icon: SiPostman },
+        { name: "VSCode", icon: Code },
+      ],
     },
   ];
 
-  const additionalSkills = ["OOP", "SDLC", "Computer Networks", "Problem Solving", "Agile"];
+  const additionalSkills = [
+    { name: "OOP", icon: Brain },
+    { name: "SDLC", icon: Zap },
+    { name: "Computer Networks", icon: Network },
+    { name: "Problem Solving", icon: Lightbulb },
+  ];
 
   return (
     <section className="scroll-section relative overflow-y-auto bg-background">
@@ -58,16 +89,19 @@ const SkillsNew = () => {
                   <h3 className="text-xl font-bold">{category.title}</h3>
                 </div>
                 
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <Badge 
-                      key={skill} 
-                      variant="secondary" 
-                      className="px-3 py-1 bg-muted hover:bg-primary/10 transition-colors"
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
+                <div className="flex flex-wrap gap-4">
+                  {category.skills.map((skill) => {
+                    const SkillIcon = skill.icon;
+                    return (
+                      <div 
+                        key={skill.name}
+                        className="group relative flex flex-col items-center gap-2 p-3 rounded-lg hover:bg-primary/10 transition-all"
+                      >
+                        <SkillIcon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
+                        <span className="text-xs font-medium text-muted-foreground">{skill.name}</span>
+                      </div>
+                    );
+                  })}
                 </div>
               </Card>
             ))}
@@ -76,16 +110,19 @@ const SkillsNew = () => {
           {/* Additional Skills */}
           <div className="text-center">
             <h4 className="text-xl font-semibold mb-4 text-muted-foreground">Also Experienced In</h4>
-            <div className="flex flex-wrap gap-3 justify-center">
-              {additionalSkills.map((tech) => (
-                <Badge 
-                  key={tech} 
-                  variant="outline" 
-                  className="text-base px-4 py-2 border-2 hover:border-primary hover:bg-primary/5 transition-all"
-                >
-                  {tech}
-                </Badge>
-              ))}
+            <div className="flex flex-wrap gap-6 justify-center">
+              {additionalSkills.map((tech) => {
+                const TechIcon = tech.icon;
+                return (
+                  <div 
+                    key={tech.name}
+                    className="group flex flex-col items-center gap-2 p-4 rounded-lg border-2 border-border hover:border-primary hover:bg-primary/5 transition-all"
+                  >
+                    <TechIcon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
+                    <span className="text-sm font-medium">{tech.name}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
