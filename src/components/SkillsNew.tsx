@@ -13,140 +13,246 @@ import {
   SiGithub,
   SiPostman
 } from "react-icons/si";
-import { Network, Brain, Lightbulb, Code, Users, Target, Puzzle, Rocket, BookOpen, TrendingUp } from "lucide-react";
-import { MonitorSmartphone } from "lucide-react";
+import { Code2, Database, Globe, GitBranch, Lightbulb, Users, Target, MessageSquare, Gauge, Sparkles } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const SkillsNew = () => {
-  const technicalSkills = [
-    { name: "React.js", icon: SiReact, position: "top-0 left-1/2 -translate-x-1/2" },
-    { name: "Python", icon: SiPython, position: "top-[12%] right-[5%]" },
-    { name: "Django", icon: SiDjango, position: "top-[35%] right-[2%]" },
-    { name: "PostgreSQL", icon: SiPostgresql, position: "bottom-[35%] right-[2%]" },
-    { name: "MySQL", icon: SiMysql, position: "bottom-[12%] right-[5%]" },
-    { name: "TailwindCSS", icon: SiTailwindcss, position: "bottom-0 left-1/2 -translate-x-1/2" },
-    { name: "Git", icon: SiGit, position: "bottom-[12%] left-[5%]" },
-    { name: "GitHub", icon: SiGithub, position: "bottom-[35%] left-[2%]" },
-    { name: "HTML5", icon: SiHtml5, position: "top-[35%] left-[2%]" },
-    { name: "TypeScript", icon: SiTypescript, position: "top-[12%] left-[5%]" },
-    { name: "CSS3", icon: SiCss3, position: "top-1/2 left-0 -translate-y-1/2" },
-    { name: "Postman", icon: SiPostman, position: "top-1/2 right-0 -translate-y-1/2" },
+  const skillCategories = [
+    {
+      title: "Frontend Development",
+      description: "Building responsive, modern, and user-centric web interfaces",
+      icon: Globe,
+      skills: [
+        {
+          name: "React.js & TypeScript",
+          level: "Advanced",
+          icon: SiReact,
+          description: "Architecting scalable component-based applications with type-safe code. Experienced in hooks, context API, and performance optimization for seamless user experiences.",
+          practical: "Built multiple production-ready SPAs with complex state management"
+        },
+        {
+          name: "Tailwind CSS",
+          level: "Advanced",
+          icon: SiTailwindcss,
+          description: "Crafting pixel-perfect, responsive designs with utility-first CSS. Proficient in creating custom design systems and maintaining consistent UI/UX across applications.",
+          practical: "Developed custom component libraries and design tokens"
+        },
+        {
+          name: "HTML5 & CSS3",
+          level: "Expert",
+          icon: SiHtml5,
+          description: "Mastering semantic markup and modern styling techniques. Expert in accessibility standards, animations, and cross-browser compatibility.",
+          practical: "Foundation for all web projects with focus on web standards"
+        }
+      ]
+    },
+    {
+      title: "Backend Development",
+      description: "Designing robust, scalable server-side solutions",
+      icon: Database,
+      skills: [
+        {
+          name: "Python & Django",
+          level: "Advanced",
+          icon: SiPython,
+          description: "Developing powerful REST APIs and full-stack applications with Django and DRF. Strong understanding of MVC architecture, authentication, and secure coding practices.",
+          practical: "Created enterprise-level applications with complex business logic"
+        },
+        {
+          name: "PostgreSQL & MySQL",
+          level: "Intermediate",
+          icon: SiPostgresql,
+          description: "Designing efficient database schemas and writing optimized queries. Proficient in data modeling, indexing, and ensuring data integrity for scalable applications.",
+          practical: "Managed databases handling thousands of concurrent transactions"
+        }
+      ]
+    },
+    {
+      title: "Development Tools",
+      description: "Streamlining workflows with modern development practices",
+      icon: Code2,
+      skills: [
+        {
+          name: "Git & GitHub",
+          level: "Advanced",
+          icon: SiGit,
+          description: "Implementing efficient version control and collaborative workflows. Experienced in branching strategies, pull requests, code reviews, and CI/CD integration.",
+          practical: "Managed codebases across multiple teams with clean commit histories"
+        },
+        {
+          name: "Postman & API Testing",
+          level: "Intermediate",
+          icon: SiPostman,
+          description: "Testing and documenting RESTful APIs with comprehensive test suites. Skilled in automated testing, environment management, and API debugging.",
+          practical: "Built extensive API collections for development and QA teams"
+        }
+      ]
+    }
   ];
 
-  const softSkills = [
-    { name: "Problem Solving", icon: Lightbulb, position: "top-0 left-1/2 -translate-x-1/2" },
-    { name: "Team Collaboration", icon: Users, position: "top-[15%] right-[5%]" },
-    { name: "Strategic Thinking", icon: Target, position: "top-[40%] right-[2%]" },
-    { name: "Continuous Learning", icon: BookOpen, position: "bottom-[40%] right-[2%]" },
-    { name: "Adaptability", icon: Puzzle, position: "bottom-[15%] right-[5%]" },
-    { name: "Innovation", icon: Rocket, position: "bottom-0 left-1/2 -translate-x-1/2" },
-    { name: "Growth Mindset", icon: TrendingUp, position: "bottom-[15%] left-[5%]" },
-    { name: "System Design", icon: Network, position: "top-[15%] left-[5%]" },
-    { name: "OOP", icon: Code, position: "top-[40%] left-[2%]" },
-    { name: "Computer Networks", icon: Network, position: "bottom-[40%] left-[2%]" },
+  const professionalSkills = [
+    {
+      name: "Problem Solving & Critical Thinking",
+      icon: Lightbulb,
+      description: "Breaking down complex challenges into actionable solutions. I approach problems systematically, analyzing requirements and designing efficient algorithms that scale."
+    },
+    {
+      name: "Team Collaboration",
+      icon: Users,
+      description: "Thriving in agile environments with cross-functional teams. Experienced in code reviews, pair programming, and knowledge sharing to deliver high-quality products."
+    },
+    {
+      name: "Strategic Planning",
+      icon: Target,
+      description: "Aligning technical decisions with business objectives. I evaluate trade-offs, prioritize features, and architect solutions that meet both current and future needs."
+    },
+    {
+      name: "Communication",
+      icon: MessageSquare,
+      description: "Translating technical concepts for diverse audiences. I document code clearly, present ideas effectively, and bridge the gap between technical and non-technical stakeholders."
+    },
+    {
+      name: "Performance Optimization",
+      icon: Gauge,
+      description: "Identifying bottlenecks and implementing performance improvements. I profile applications, optimize database queries, and ensure responsive user experiences."
+    },
+    {
+      name: "Continuous Innovation",
+      icon: Sparkles,
+      description: "Staying current with industry trends and emerging technologies. I actively experiment with new tools, contribute to learning communities, and apply best practices."
+    }
   ];
+
+  const getLevelColor = (level: string) => {
+    switch (level) {
+      case "Expert": return "bg-primary text-primary-foreground";
+      case "Advanced": return "bg-primary/80 text-primary-foreground";
+      case "Intermediate": return "bg-primary/60 text-primary-foreground";
+      default: return "bg-muted text-muted-foreground";
+    }
+  };
 
   return (
     <section className="scroll-section relative overflow-y-auto bg-background">
-      <div className="min-h-screen flex flex-col justify-center px-8 py-12">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="text-center mb-12 animate-fade-in-up">
+      <div className="min-h-screen px-8 py-16">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-5xl font-bold mb-4">
               Skills & <span className="gradient-text">Expertise</span>
             </h2>
-            <p className="text-muted-foreground text-lg">My professional toolkit and capabilities</p>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              A comprehensive blend of technical proficiency and professional excellence, 
+              refined through hands-on experience and continuous learning
+            </p>
           </div>
 
-          {/* Skills Grid - Side by Side */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Technical Skills Section */}
-            <div>
-              <h3 className="text-2xl font-bold text-center mb-8">
-                <span className="gradient-text">Technical Skills</span>
+          {/* Technical Skills - Card Grid */}
+          <div className="space-y-12 mb-16">
+            <div className="text-center">
+              <h3 className="text-3xl font-bold mb-2">
+                <span className="gradient-text">Technical Expertise</span>
               </h3>
-              <div className="relative w-full max-w-xl mx-auto" style={{ height: '500px' }}>
-                {/* Central Computer Illustration */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                  <div className="relative w-32 h-32 flex items-center justify-center">
-                    <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl animate-pulse"></div>
-                    <div className="relative bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-sm p-6 rounded-2xl border-2 border-primary/30">
-                      <MonitorSmartphone className="w-20 h-20 text-primary animate-float" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Orbiting Technical Skills */}
-                {technicalSkills.map((skill, idx) => {
-                  const SkillIcon = skill.icon;
-                  return (
-                    <div
-                      key={skill.name}
-                      className={`absolute ${skill.position} animate-fade-in-up`}
-                      style={{ animationDelay: `${idx * 0.08}s` }}
-                    >
-                      <div className="group relative">
-                        <div className="absolute inset-0 bg-primary/20 rounded-full blur-lg group-hover:blur-xl transition-all"></div>
-                        <div className="relative bg-background/80 backdrop-blur-sm p-4 rounded-full border-2 border-primary/30 hover:border-primary hover:scale-110 transition-all duration-300 shadow-lg">
-                          <SkillIcon className="w-8 h-8 text-primary" />
-                        </div>
-                        <div className="absolute -bottom-7 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">
-                          <span className="text-xs font-semibold text-primary bg-background/95 px-2 py-1 rounded-full border border-primary/30">
-                            {skill.name}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+              <p className="text-muted-foreground">Tools and technologies I leverage to build exceptional products</p>
             </div>
 
-            {/* Soft Skills Section */}
-            <div>
-              <h3 className="text-2xl font-bold text-center mb-8">
-                <span className="gradient-text">Professional Skills</span>
-              </h3>
-              <div className="relative w-full max-w-xl mx-auto" style={{ height: '500px' }}>
-                {/* Central Brain Illustration */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                  <div className="relative w-32 h-32 flex items-center justify-center">
-                    <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl animate-pulse"></div>
-                    <div className="relative bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-sm p-6 rounded-2xl border-2 border-primary/30">
-                      <Brain className="w-20 h-20 text-primary animate-float" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Orbiting Soft Skills */}
-                {softSkills.map((skill, idx) => {
-                  const SkillIcon = skill.icon;
-                  return (
-                    <div
-                      key={skill.name}
-                      className={`absolute ${skill.position} animate-fade-in-up`}
-                      style={{ animationDelay: `${idx * 0.08}s` }}
-                    >
-                      <div className="group relative">
-                        <div className="absolute inset-0 bg-primary/20 rounded-full blur-lg group-hover:blur-xl transition-all"></div>
-                        <div className="relative bg-background/80 backdrop-blur-sm p-4 rounded-full border-2 border-primary/30 hover:border-primary hover:scale-110 transition-all duration-300 shadow-lg">
-                          <SkillIcon className="w-8 h-8 text-primary" />
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {skillCategories.map((category, idx) => {
+                const CategoryIcon = category.icon;
+                return (
+                  <Card 
+                    key={category.title} 
+                    className="group hover:shadow-lg transition-all duration-300 border-primary/20 hover:border-primary/50 animate-fade-in-up"
+                    style={{ animationDelay: `${idx * 0.1}s` }}
+                  >
+                    <CardHeader>
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                          <CategoryIcon className="w-6 h-6 text-primary" />
                         </div>
-                        <div className="absolute -bottom-7 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">
-                          <span className="text-xs font-semibold text-primary bg-background/95 px-2 py-1 rounded-full border border-primary/30">
-                            {skill.name}
-                          </span>
-                        </div>
+                        <CardTitle className="text-xl">{category.title}</CardTitle>
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
+                      <CardDescription>{category.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                      {category.skills.map((skill) => {
+                        const SkillIcon = skill.icon;
+                        return (
+                          <div key={skill.name} className="space-y-2">
+                            <div className="flex items-start justify-between gap-2">
+                              <div className="flex items-center gap-2">
+                                <SkillIcon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                                <h4 className="font-semibold text-sm">{skill.name}</h4>
+                              </div>
+                              <Badge className={`${getLevelColor(skill.level)} text-xs`}>
+                                {skill.level}
+                              </Badge>
+                            </div>
+                            <p className="text-xs text-muted-foreground leading-relaxed">
+                              {skill.description}
+                            </p>
+                            <div className="flex items-start gap-2 pt-1">
+                              <Code2 className="w-3 h-3 text-primary/60 flex-shrink-0 mt-0.5" />
+                              <p className="text-xs text-primary/80 italic">
+                                {skill.practical}
+                              </p>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
 
-          {/* Code decoration */}
-          <div className="mt-8 font-mono text-sm text-center text-muted-foreground">
-            <code className="text-primary">{'// '}</code>
-            <code>Continuously evolving with technology and professional growth</code>
+          {/* Professional Skills */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h3 className="text-3xl font-bold mb-2">
+                <span className="gradient-text">Professional Excellence</span>
+              </h3>
+              <p className="text-muted-foreground">Soft skills that drive collaboration and impactful results</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {professionalSkills.map((skill, idx) => {
+                const SkillIcon = skill.icon;
+                return (
+                  <Card 
+                    key={skill.name} 
+                    className="group hover:shadow-md transition-all duration-300 border-primary/20 hover:border-primary/50 animate-fade-in-up"
+                    style={{ animationDelay: `${idx * 0.08}s` }}
+                  >
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-3">
+                        <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors flex-shrink-0">
+                          <SkillIcon className="w-5 h-5 text-primary" />
+                        </div>
+                        <div className="space-y-2">
+                          <h4 className="font-semibold text-sm">{skill.name}</h4>
+                          <p className="text-xs text-muted-foreground leading-relaxed">
+                            {skill.description}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Footer Note */}
+          <div className="mt-12 text-center">
+            <div className="inline-block px-6 py-3 rounded-full bg-primary/5 border border-primary/20">
+              <p className="text-sm text-muted-foreground">
+                <code className="text-primary font-mono">{'// '}</code>
+                Continuously evolving through hands-on projects and staying ahead of industry trends
+              </p>
+            </div>
           </div>
         </div>
       </div>
