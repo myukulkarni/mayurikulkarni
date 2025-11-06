@@ -32,7 +32,7 @@ export function AppSidebar() {
   }
 
   return (
-    <Sidebar className="w-16" collapsible="none">
+    <Sidebar className="w-16 hidden sm:flex" collapsible="none">
       <SidebarContent>
         <div className="p-3 flex items-center justify-center border-b border-border">
           <ThemeToggle />
@@ -45,10 +45,10 @@ export function AppSidebar() {
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton
                     onClick={() => scrollToSection(item.section)}
-                    className="hover:bg-primary/10 transition-colors justify-center h-14"
+                    className="hover:bg-primary/10 transition-colors justify-center h-12 sm:h-14"
                     tooltip={item.title}
                   >
-                    <item.icon className="h-7 w-7 text-primary" />
+                    <item.icon className="h-5 w-5 sm:h-7 sm:w-7 text-primary" />
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

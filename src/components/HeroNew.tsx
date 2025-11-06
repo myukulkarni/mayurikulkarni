@@ -15,31 +15,31 @@ const HeroNew = () => {
         <div className="absolute bottom-20 right-40 text-primary/20 font-mono text-sm animate-float" style={{animationDelay: '1.5s'}}>{'( )'}</div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-8 py-20 grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 grid md:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
         {/* Left: Content */}
-        <div className="space-y-8 animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-sm font-medium text-primary">
-            <Terminal className="w-4 h-4" />
+        <div className="space-y-4 sm:space-y-6 lg:space-y-8 animate-fade-in-up">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-primary/20 bg-primary/5 text-xs sm:text-sm font-medium text-primary">
+            <Terminal className="w-3 h-3 sm:w-4 sm:h-4" />
             Full Stack Developer
           </div>
           
           <div>
-            <h1 className="text-6xl md:text-7xl font-bold mb-4 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-3 sm:mb-4 tracking-tight">
               Hi, I'm{" "}
-              <span className="gradient-text block mt-2">Mayuri Kulkarni</span>
+              <span className="gradient-text block mt-1 sm:mt-2">Mayuri Kulkarni</span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
+            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg">
               Building innovative web experiences with React, Django, and PostgreSQL. 
               Leading teams and crafting solutions that matter.
             </p>
           </div>
 
           {/* Code snippet decoration */}
-          <div className="font-mono text-sm text-muted-foreground/80 bg-muted/30 p-4 rounded-lg border border-border">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-3 h-3 rounded-full bg-destructive/60" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
-              <div className="w-3 h-3 rounded-full bg-primary/60" />
+          <div className="font-mono text-xs sm:text-sm text-muted-foreground/80 bg-muted/30 p-3 sm:p-4 rounded-lg border border-border">
+            <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
+              <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-destructive/60" />
+              <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-yellow-500/60" />
+              <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-primary/60" />
             </div>
             <code className="text-primary">const</code>{" "}
             <code className="text-foreground">developer</code>{" "}
@@ -56,10 +56,10 @@ const HeroNew = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
             <Button 
               size="lg" 
-              className="group shadow-lg hover:shadow-xl transition-all"
+              className="group shadow-lg hover:shadow-xl transition-all w-full sm:w-auto text-sm sm:text-base"
               onClick={() => {
                 const container = document.querySelector('.horizontal-scroll');
                 if (container) container.scrollTo({ left: 3 * window.innerWidth, behavior: 'smooth' });
@@ -71,7 +71,7 @@ const HeroNew = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-2"
+              className="border-2 w-full sm:w-auto text-sm sm:text-base"
               onClick={() => {
                 const container = document.querySelector('.horizontal-scroll');
                 if (container) container.scrollTo({ left: 6 * window.innerWidth, behavior: 'smooth' });
@@ -82,34 +82,34 @@ const HeroNew = () => {
           </div>
 
           {/* Social Links */}
-          <div className="flex gap-4">
+          <div className="flex gap-3 sm:gap-4 justify-center sm:justify-start">
             <a 
               href="https://github.com/myukulkarni" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-3 rounded-lg border border-border hover:border-primary hover:bg-primary/5 transition-all hover:scale-110"
+              className="p-2 sm:p-3 rounded-lg border border-border hover:border-primary hover:bg-primary/5 transition-all hover:scale-110"
             >
-              <Github className="w-5 h-5" />
+              <Github className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
             <a 
               href="https://linkedin.com/in/mayuri-kulkarni" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-3 rounded-lg border border-border hover:border-primary hover:bg-primary/5 transition-all hover:scale-110"
+              className="p-2 sm:p-3 rounded-lg border border-border hover:border-primary hover:bg-primary/5 transition-all hover:scale-110"
             >
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
             <a 
               href="mailto:kulkarnimayuri210@gmail.com"
-              className="p-3 rounded-lg border border-border hover:border-primary hover:bg-primary/5 transition-all hover:scale-110"
+              className="p-2 sm:p-3 rounded-lg border border-border hover:border-primary hover:bg-primary/5 transition-all hover:scale-110"
             >
-              <Mail className="w-5 h-5" />
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
           </div>
         </div>
 
-        {/* Right: Animated Visual Effect */}
-        <div className="relative flex items-center justify-center animate-fade-in-up h-96" style={{animationDelay: '0.2s'}}>
+        {/* Right: Animated Visual Effect - Hidden on mobile for better performance */}
+        <div className="hidden md:flex relative items-center justify-center animate-fade-in-up h-96" style={{animationDelay: '0.2s'}}>
           {/* Central glowing orb */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-64 h-64 bg-gradient-to-r from-primary/30 via-primary/50 to-emerald-light/30 rounded-full blur-3xl animate-pulse" />
@@ -164,9 +164,9 @@ const HeroNew = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 right-8 flex items-center gap-2 text-sm text-muted-foreground animate-bounce">
+      <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 right-4 sm:right-6 lg:right-8 flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-muted-foreground animate-bounce">
         <span className="hidden md:inline">Scroll right to explore</span>
-        <ChevronRight className="w-5 h-5" />
+        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
       </div>
     </section>
   )
