@@ -4,7 +4,7 @@ import { Trophy, TrendingUp, Code, GitBranch } from "lucide-react";
 const AboutNew = () => {
   const stats = [
     { icon: Code, label: "Projects", value: "12+", color: "text-primary" },
-    { icon: TrendingUp, label: "GPA", value: "8.77", color: "text-primary" },
+    { icon: TrendingUp, label: "CGPA", value: "9+", color: "text-primary" },
     { icon: Trophy, label: "Hackathons", value: "5+", color: "text-primary" },
     { icon: GitBranch, label: "Tech Stack", value: "15+", color: "text-primary" },
   ];
@@ -28,7 +28,7 @@ const AboutNew = () => {
                 <div className="space-y-3 sm:space-y-4 text-muted-foreground leading-relaxed text-sm sm:text-base">
                   <p>
                     I'm a <strong className="text-foreground">Full Stack Developer</strong> pursuing BTech in Computer Science 
-                    at SKNSCOE Pune, specializing in building scalable web applications with modern frameworks and architectures.
+                    at SKNSCOE Pandharpur, specializing in building scalable web applications with modern frameworks and architectures.
                   </p>
                   <p>
                     My technical expertise spans <strong className="text-foreground">React, Django, PostgreSQL, and REST APIs</strong>, 
