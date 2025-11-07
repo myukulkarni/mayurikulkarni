@@ -6,14 +6,14 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "Eventmitra – Click-Plan-Celebrate",
-      description: "Full-stack event management platform with role-based dashboards, analytics module, and booking system.",
-      tech: ["React.js", "Django", "REST API", "DRF", "PostgreSQL"],
-      date: "July 2025",
+      title: "संवाद - Mentorship Platform",
+      description: "Smart mentorship platform connecting mentees and mentors seamlessly with booking, chat, and analytics.",
+      tech: ["React.js", "Django", "DRF", "PostgreSQL", "REST API"],
+      date: "2025",
       highlights: [
-        "Component-based responsive UI",
-        "Role-based dashboards for shopkeepers & customers",
-        "Analytics with custom API endpoints",
+        "Mentor discovery with verified profiles & session booking",
+        "Private chat system with automatic meeting notes",
+        "Analytics dashboard for mentors to track growth & connections",
       ],
     },
     {

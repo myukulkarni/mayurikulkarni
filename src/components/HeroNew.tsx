@@ -25,12 +25,11 @@ const HeroNew = () => {
           
           <div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-3 sm:mb-4 tracking-tight">
-              Hi, I'm{" "}
-              <span className="gradient-text block mt-1 sm:mt-2">Mayuri Kulkarni</span>
+              yoo !!{" "}
+              <span className="gradient-text block mt-1 sm:mt-2">mayuri here !!</span>
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg">
-              Building innovative web experiences with React, Django, and PostgreSQL. 
-              Leading teams and crafting solutions that matter.
+              "The one who makes buttons work and servers behave."
             </p>
           </div>
 
